@@ -14,14 +14,12 @@ header {
 
 .nav-title {
     text-align: center;
-    width: 33%;
-    border: black solid 3px;
 }
 
 header nav {
     display: flex;
-    flex: space-between;
     align-items: center;
+    justify-content: center;
 }
 
 header nav a {

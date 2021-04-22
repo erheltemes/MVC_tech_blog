@@ -34,7 +34,6 @@ router.get('/login', async (req, res) => {
   }
 });
 
-// GET one painting
 router.get('/sign_up', async (req, res) => {
   try {
     res.render('sign_up');
@@ -46,12 +45,30 @@ router.get('/sign_up', async (req, res) => {
 
 router.get('/dashboard', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username_id: req.session.user_id} }, 
-      {include: [ {model: Post, Comment} ]
-    })
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [ Post ],
+    });
 
-    res.render('dashboard',
-    );
+    const user = userData.get({ plain: true });
+    console.log(user)
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: req.session.logged_in,
+      logged_in_user: req.session.username
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/new_post', async (req, res) => {
+  try {
+    res.render('new_post', {
+      logged_in: req.session.logged_in,
+      logged_in_user: req.session.username
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

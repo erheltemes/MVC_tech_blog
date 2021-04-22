@@ -22,8 +22,6 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log("button pushed")
-
   const username = document.querySelector('#signup-username-input').value.trim();
   const password = document.querySelector('#signup-password-input').value.trim();
 
@@ -41,7 +39,6 @@ const signupFormHandler = async (event) => {
     }
   }
 };
-
 
 const loginBtn = document.getElementById("login-btn") 
 if (loginBtn) {

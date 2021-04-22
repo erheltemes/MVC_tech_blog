@@ -1,14 +1,22 @@
-
-<section>
+<div class="create-post">
+  <button id="new-post-btn">New Post</button>
+</div>
+{{#if posts.length}}
+<section id="posts-list">
   {{#each posts as |post|}}
   <div class="basic-card">
     <div class="basic-card-head">
       <h2>{{post.post_title}}</h2>
-      <p>Posted by {{post.user.username}} on {{post.user.updatedAt}}</p>
+      <p>Posted by {{username}} on {{format_date post.updatedAt}}</p>
     </div>
     <div class="basic-body">
-      <p>{{post.post_body}}</p>
+      <p>{{post.post_body}}</p> 
     </div>
+    <button class="post-delete" data-id="{{post.id}}">DELETE</button>
   </div>
   {{/each}}
 </section>
+{{/if}}
+
+<script src="./js/dashboard.js"></script>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVC: Tech Blog</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav-title">
+      <nav>
+        <a href="/">Home</a>
+        {{#if logged_in }}
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+        {{else}}
+        <a href="/login">Login/SignUp</a>
+        {{/if}}
+      </nav>
+      <h1>Current Page</h1>
+      {{#if logged_in }}
+      <h3>{{logged_in_user}}</h3>
+      {{/if}}
+    </div>
+  </header>
+
+  <main>
+      {{{body}}}
+  </main>
+</body>
+
+</html>

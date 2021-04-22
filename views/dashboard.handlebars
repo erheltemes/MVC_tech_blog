@@ -1,0 +1,14 @@
+
+<section>
+  {{#each posts as |post|}}
+  <div class="basic-card">
+    <div class="basic-card-head">
+      <h2>{{post.post_title}}</h2>
+      <p>Posted by {{post.user.username}} on {{post.user.updatedAt}}</p>
+    </div>
+    <div class="basic-body">
+      <p>{{post.post_body}}</p>
+    </div>
+  </div>
+  {{/each}}
+</section>

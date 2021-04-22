@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 16px;
+    font-family: Tahoma
+}
+
+header {
+    background: rgb(46, 0, 0);
+    color: white;
+    padding: 50px;
+    margin-bottom: 10px;
+}
+
+.nav-title {
+    text-align: center;
+    width: 33%;
+    border: black solid 3px;
+}
+
+header nav {
+    display: flex;
+    flex: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin: 20px;
+    color: rgb(101, 101, 255);
+    justify-self: center;
+}
+
+header h1 {
+    padding: 5px;
+    display: inline;
+    border-radius: 10px;
+    background: white;
+    color: rgb(46, 0, 0);
+}
+
+.basic-card {
+    border:rgb(46, 0, 0) solid 1px;
+    margin-bottom: 10px;
+}
+
+.basic-card-head {
+    background: rgb(46, 0, 0);
+    color: white;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.basic-card-head h2 {
+    width: 70%;
+    justify-self: end;
+}
+
+.basic-card-head p {
+    width: 30%;
+    justify-self: end;
+    text-align:end
+}
+
+.basic-body {
+    padding: 5px;
+}
